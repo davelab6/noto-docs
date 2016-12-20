@@ -9,7 +9,8 @@ cd "$dir"
 cd ../srcdocs/
 
 echo "$" mkdocs build --clean
-mkdocs build --clean
+_="mkdocs build --clean"
+$_
 
 echo "$" git add .
 git add .
