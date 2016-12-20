@@ -6,4 +6,5 @@ fi
 cd "$dir"
 
 sh ./build.command
+git push
 sh ./push-all.command
