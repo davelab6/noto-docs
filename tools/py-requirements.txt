@@ -1,0 +1,5 @@
+mkdocs
+pymdown-extensions
+markdown-include
+mdx_sections
+git+https://github.com/twardoch/markdown-steroids.git/@master#egg=mdx_steroids-0.4.0

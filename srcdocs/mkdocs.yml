@@ -1,0 +1,28 @@
+site_name: Noto fonts documentation
+site_url: https://twardoch.github.io/noto-docs/
+copyright: Copyright © 2016 by Google Inc. and contributors
+docs_dir: wiki/
+site_dir: ../docs/
+use_directory_urls: true
+theme: readthedocs
+markdown_extensions:
+  - pymdownx.betterem
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.headeranchor
+  - pymdownx.mark
+  - smarty
+  - attr_list
+  - footnotes
+  - admonition
+  - markdown_include.include:
+      'base_path': 'wiki/'
+  - mdx_sections
+  - mdx_steroids.mdx_figcaption
+  - mdx_steroids.mdx_wikilink
+
+pages:
+- index.md
+- FAQ.md
+- License:
+    - License.md
