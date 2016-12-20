@@ -8,9 +8,9 @@ cd "$dir"
 
 cd ../srcdocs/
 
-_="mkdocs build --clean"
-echo "$" $_
-eval $_
+r="mkdocs build --clean"
+echo "$" $r
+eval $r
 
 echo "$" git add .
 git add .
