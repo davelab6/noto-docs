@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "$" test.command
 dir=${0%/*}
 if [ "$dir" = "$0" ]; then
   dir="."
