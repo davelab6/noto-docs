@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 echo "$" test.command
+echo "Wait a few seconds!"
 dir=${0%/*}
 if [ "$dir" = "$0" ]; then
   dir="."
