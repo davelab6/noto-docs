@@ -9,8 +9,8 @@ sh ./push-wiki.command
 
 cd ../
 git add --all 
-git commit -am "$(whoami) $(date +'%Y-%m-%d %H:%M:%S')" 
+git commit -am "repo up: $(whoami) $(date +'%Y-%m-%d %H:%M:%S')" 
 git fetch origin
-git merge origin/master -m "$(whoami) $(date +'%Y-%m-%d %H:%M:%S')" 
+git merge origin/master -m "repo merge: $(whoami) $(date +'%Y-%m-%d %H:%M:%S')" 
 git push -u origin master 
 cd ./tools/
