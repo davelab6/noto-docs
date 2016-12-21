@@ -19,7 +19,7 @@ The documentation has two forms: the **source form**, which is a Github wiki, an
 The Noto fonts wiki is the source of the documentation, and can be edited and accessed in two ways:
 
 * https://github.com/twardoch/noto-docs/wiki — for reading and in-browser editing on Github.com
-* https://github.com/twardoch/noto-docs.wiki.git — as the git repo that you can clone
+* https://github.com/twardoch/noto-docs.wiki.git — as the git repo that you should clone inside the `srcdocs/` folder of your local Noto docs repo.
 
 ## Authoring guidelines
 
@@ -38,6 +38,8 @@ The wiki repo can be cloned locally with
 ```sh
 git clone https://github.com/twardoch/noto-docs.wiki.git wiki
 ```
+
+If you’re planning to be building the docs, you should clone the repo inside the `srcdocs/` folder of your local Noto docs repo.
 
 You’ll get `wiki` folder with the source wiki structure (Markdown files in the main folder, images in the `img` folder). If you’re working locally, remember to **commit regularly** as others may also be working!
 
@@ -148,7 +150,7 @@ The above results in the following HTML output:
 
 ### Hand-written HTML
 
-Authors can use **practically all of HTML** — it won’t be rendered in the wiki but will in the final docs. So please be careful and don’t use it much! 
+Authors can use **practically all of HTML** — it won’t be rendered in the wiki but will in the final docs. So please be careful and don’t use it much!
 
 ### Extension modules used in the documentation
 
@@ -173,7 +175,7 @@ In addition to standard Markdown and GFM, we can use the following extension syn
   # {html-id,html-class} Title
   ```
   * [`meta`](https://pythonhosted.org/Markdown/extensions/meta_data.html) for page metadata
-  * `mdx_wikilink` and `mdx_figcaption` from [`mdx_steroids`](https://github.com/twardoch/markdown-steroids) for Github Wiki link support in form of `[[Page Title]]` → `[Page Title](Page-Title.md)` and for figures with captions 
+  * `mdx_wikilink` and `mdx_figcaption` from [`mdx_steroids`](https://github.com/twardoch/markdown-steroids) for Github Wiki link support in form of `[[Page Title]]` → `[Page Title](Page-Title.md)` and for figures with captions
 
 We can enable additional [standard](https://pythonhosted.org/Markdown/extensions/) and [3rd-party](https://github.com/waylan/Python-Markdown/wiki/Third-Party-Extensions) extensions for the MkDocs Markdown processor — but note that they won't be rendered in the wiki but only in the published manual.
 
@@ -183,21 +185,17 @@ This section mostly covers the process of converting the wiki into the final onl
 
 ## Structure
 
-On your local machine, create a folder `noto-docs`. Inside that folder do:
+On your local machine, create a folder `noto-docs-dev`. Inside that folder do:
   ```sh
-  git clone https://github.com/twardoch/noto-docs master
-  git clone https://github.com/twardoch/noto-docs.wiki.git wiki
+  git clone https://github.com/twardoch/noto-docs noto-docs
+  cd noto-docs/
+  sh ./tools/install.command
   ```
-4. You should get *two* folders:
-  ```
-  noto-docs/
-    master/
-    wiki/
-  ```
+This will install the Python requirements and also clone the `noto-docs.wiki` repo inside of the `srcdocs/` folder within the `noto-docs` repo. Note that we are not using Git submodules because Github does not support them for creating wikis.
 
 ## mkdocs.yml
 
-The **[`master/mkdocs.yml`](mkdocs.yml)** file contains the **table of contents** of the final docs, and some configuration settings for the MkDocs engine. This is a [YAML](https://en.wikipedia.org/wiki/YAML) file, and should be written according to the [MkDocs guide](http://www.mkdocs.org/user-guide/writing-your-docs/) and [MkDocs config](http://www.mkdocs.org/user-guide/configuration/).
+The **[`noto-docs/srcdocs/mkdocs.yml`](srcdocs/mkdocs.yml)** file contains the **table of contents** of the final docs, and some configuration settings for the MkDocs engine. This is a [YAML](https://en.wikipedia.org/wiki/YAML) file, and should be written according to the [MkDocs guide](http://www.mkdocs.org/user-guide/writing-your-docs/) and [MkDocs config](http://www.mkdocs.org/user-guide/configuration/).
 
 **Extremely important**: The `pages` section of `mkdocs.yml` must be updated to get the site navigation of the docs, and to convert all documents. **Only** the `.md` documents mentioned in the `mkdocs.yml` will be converted — not the entire wiki! This is a bit cumbersome, but on the other hand, it’ll allow us to really structure multiple documentations, not just one.
 
@@ -205,20 +203,30 @@ The **[`master/mkdocs.yml`](mkdocs.yml)** file contains the **table of contents*
 
 Mkdocs uses a [very simple structure](http://www.mkdocs.org/user-guide/writing-your-docs/). It's possible to output the docs using different themes, including a [super-simple theme](http://www.mkdocs.org/user-guide/styling-your-docs/). It's possible to deploy the output into GitHub Pages which will be [immediately hosted](http://www.mkdocs.org/user-guide/deploying-your-docs/).
 
-### Installation
+### Noto MkDocs theme
 
-Run:
-```sh
-pip install --user --upgrade -r py_requirements.txt
+The https://github.com/twardoch/noto-mkdocs-theme repo holds the development version of a **Noto MkDocs theme**. Clone it next to the `noto-docs` folder so in your `noto-docs-dev` folder you have two:
+```
+noto-docs-dev/
+- noto-docs/
+- noto-mkdocs-theme/
 ```
 
 ### Building the docs
 
-Navigate to the `master/` folder and run:
+Navigate to the `noto-docs/` folder and run:
 ```sh
-mkdocs build --clean
+./tools/build.command
 ```
-and in the `master/docs/` folder you’ll have the final docs.
+and in the `docs/` folder you’ll have the final docs.
+
+### Building and pushing the
+
+Navigate to the `noto-docs/` folder and run:
+```sh
+./tools/build-push-all.command
+```
+and https://twardoch.github.io/noto-docs/ will have the final docs.
 
 ### Some useful tools
 
