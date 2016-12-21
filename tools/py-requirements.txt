@@ -1,5 +1,5 @@
-mkdocs
-pymdown-extensions
-markdown-include
+mkdocs>=0.16.0
+pymdown-extensions>=1.2
+markdown-include>=0.5.1
 mdx_sections
 git+https://github.com/twardoch/markdown-steroids.git/@master#egg=mdx_steroids-0.4.0
