@@ -15,8 +15,8 @@ git add --all
 echo "$" git commit -am "wiki up: $(whoami) $(date +'%Y-%m-%d %H:%M:%S')" 
 git commit -am "wiki up: $(whoami) $(date +'%Y-%m-%d %H:%M:%S')" 
 
-echo "$" git push
-git push
+#echo "$" git push
+#git push
 
 echo "$" git fetch origin
 git fetch origin

@@ -8,7 +8,7 @@ cd "$dir"
 
 sh ./build.command
 
-echo "$" git push
-git push
+#echo "$" git push
+#git push
 
 sh ./push-all.command
