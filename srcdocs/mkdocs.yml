@@ -5,8 +5,8 @@ site_author: The Google Internationalization Team
 site_url: https://twardoch.github.io/noto-docs/
 
 # Repository
-repo_name: noto-docs-mkdocs-theme
-repo_url: https://github.com/twardoch/noto-docs-mkdocs-theme
+repo_name: noto-mkdocs-theme
+repo_url: https://github.com/twardoch/noto-mkdocs-theme
 
 # Copyright
 copyright: Copyright © 2016 by Google Inc. and contributors
@@ -31,7 +31,8 @@ use_directory_urls: true
 
 # Extensions
 markdown_extensions:
-  - codehilite(css_class=code)
+  - codehilite:
+      css_class: 'code'
   - pymdownx.betterem
   - pymdownx.magiclink
   - pymdownx.superfences
@@ -46,8 +47,8 @@ markdown_extensions:
   - markdown_include.include:
       'base_path': 'wiki/'
   - mdx_sections
-  - mdx_steroids.mdx_figcaption
-  - mdx_steroids.mdx_wikilink
+  - mdx_steroids.figcaption
+  - mdx_steroids.wikilink
 
 # Page tree
 pages:
