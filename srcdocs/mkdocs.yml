@@ -12,8 +12,8 @@ repo_url: https://github.com/twardoch/noto-mkdocs-theme
 copyright: Copyright © 2016 by Google Inc. and contributors
 
 # Documentation and theme
-# theme: noto_mktheme
-theme_dir: ../../noto-mkdocs-theme/noto_mktheme/
+theme: cinder
+#theme_dir: ../../noto-mkdocs-theme/noto_mktheme/
 
 # Options
 extra:
