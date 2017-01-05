@@ -12,7 +12,7 @@ repo_url: https://github.com/twardoch/noto-mkdocs-theme
 copyright: Copyright © 2016 by Google Inc. and contributors
 
 # Documentation and theme
-theme_dir: material
+theme: material
 
 # Options
 extra:
