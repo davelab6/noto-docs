@@ -12,18 +12,26 @@ repo_url: https://github.com/twardoch/noto-mkdocs-theme
 copyright: Copyright © 2016 by Google Inc. and contributors
 
 # Documentation and theme
-theme: cinder
-#theme_dir: ../../noto-mkdocs-theme/noto_mktheme/
+theme_dir: material
 
 # Options
 extra:
-  version: 0.2.5
-  logo: images/logo.png
+  version: 1.0.0
   github:
     download_release: true
-  author:
-    github: twardoch
-    twitter: adamtwar
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    mono: Roboto Mono
+  social:
+    - type: github-alt
+      link: https://github.com/squidfunk
+    - type: twitter
+      link: https://twitter.com/squidfunk
+    - type: linkedin
+      link: https://de.linkedin.com/in/martin-donath-20a95039
 
 docs_dir: wiki/
 site_dir: ../docs/
