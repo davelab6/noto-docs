@@ -48,7 +48,7 @@ markdown_extensions:
   - markdown_include.include:
       'base_path': 'wiki/'
   - mdx_sections
-  - mdx_steroids.figcaption
+  - figcap
   - mdx_steroids.wikilink
 
 # Page tree
